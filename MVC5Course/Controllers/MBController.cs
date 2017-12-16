@@ -28,8 +28,14 @@ namespace MVC5Course.Controllers
             
             return View();
         }
-
+        /// <summary>
+        /// 自定義HandleError 訊息用法
+        /// 1.[HandleError(ExceptionType = typeof(DbEntityValidationException),View ="Error_DbEntityValidationException")]
+        /// </summary>
+        /// <param name="batch"></param>
+        /// <returns></returns>
         [HttpPost]
+        [HandleError(ExceptionType = typeof(DbEntityValidationException),View ="Error_DbEntityValidationException")]
         //[ValidateAntiForgeryToken]
         public ActionResult Index(MBBatchUpdateVM[] batch)
         {
