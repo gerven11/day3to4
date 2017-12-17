@@ -586,6 +586,8 @@
     <Content Include="Views\Clients\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Client.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Client.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CreditRating.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Gender.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
