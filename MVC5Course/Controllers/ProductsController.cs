@@ -98,7 +98,7 @@ namespace MVC5Course.Controllers
                                   Text = p.Price
                               }).Distinct().OrderBy(p => p.Value);
 
-            ViewBag.Price = new SelectList(price_list, "Value", "Text", product.Price);
+            ViewBag.Price = new SelectList(price_list, "Value", "Text");
 
             return View(product);
         }
@@ -118,6 +118,20 @@ namespace MVC5Course.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            if (ModelState.IsValid)
+            {
+
+            }
+            var price_list = (from p in db.Product
+                              select new
+                              {
+                                  Value = p.Price,
+                                  Text = p.Price
+                              }).Distinct().OrderBy(p => p.Value);
+
+            ViewBag.Price = new SelectList(price_list, "Value", "Text");
+
             return View(product);
         }
 
