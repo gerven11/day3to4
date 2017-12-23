@@ -54,7 +54,7 @@
         </td>        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClientId }) |
-            @Ajax.ActionLink("Details", "Details", new { id=item.ClientId },new AjaxOptions() { UpdateTargetId = "main"}) |
+            @Ajax.ActionLink("Details", "Details", new { id=item.ClientId },new AjaxOptions() { UpdateTargetId = "main", Confirm = "確定要開啟 Details 頁嗎？"}) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ClientId })
         </td>
     </tr>
