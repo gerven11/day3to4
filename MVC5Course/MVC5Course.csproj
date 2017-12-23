@@ -478,6 +478,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="widgets.html" />
     <EntityDeploy Include="Models\Fabrics.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -589,6 +591,7 @@
     <Content Include="Views\Shared\DisplayTemplates\CreditRating.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Gender.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateOfBrith.cshtml" />
+    <Content Include="Views\Home\AjaxHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />

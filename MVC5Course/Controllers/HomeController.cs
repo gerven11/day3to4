@@ -40,5 +40,17 @@ namespace MVC5Course.Controllers
 
             return View();
         }
+
+        public ActionResult AjaxHome()
+        {
+
+            return View();
+        }
+
+        public ActionResult GetTime()
+        {
+
+            return Content(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff"));
+        }
     }
 }
