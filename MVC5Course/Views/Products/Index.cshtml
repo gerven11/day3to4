@@ -4,6 +4,11 @@
 
 @{
     ViewBag.Title = "Index";
+    var pageListData = Model as IPagedList;
+    if (IsAjax)
+    {
+        Layout = "";
+    }
 }
 
 <h2>Index</h2>
@@ -11,7 +16,11 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@Html.PagedListPager(pageListData,
+    (p) => Url.Action("Index", new {  pageNo = p}),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing("main"))
+
+<table class="table" id="main">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ProductName)
@@ -42,13 +51,13 @@
         <td>
             @if (item.Stock < 1000)
             {
-                @:<strong style="color: red;">
+                @("<strong style=\"color: red;\">")
             }
             @Html.DisplayFor(modelItem => item.Stock)
 
             @if (item.Stock < 1000)
             {
-                @:</strong>
+                @("</strong>")
             }
         </td>
         <td>
@@ -61,9 +70,11 @@
 
 </table>
 
-@{ 
-    var pageListData = Model as IPagedList;
-}
-
 @Html.PagedListPager(pageListData,
-    (p) => Url.Action("Index", new {  pageNo = p}))
+    (p) => Url.Action("Index", new {  pageNo = p}),
+    PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing("main"))
+
+@section Scripts{
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    }
+    
