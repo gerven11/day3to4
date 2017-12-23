@@ -599,6 +599,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Gender.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateOfBrith.cshtml" />
     <Content Include="Views\Home\AjaxHome.cshtml" />
+    <Content Include="Views\Home\TestEncode.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Base\" />
